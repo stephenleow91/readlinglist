@@ -1,0 +1,4 @@
+com\example\readinglist\ReadinglistApplication.class
+com\example\repository\ReadingListRepository.class
+com\example\controller\ReadingListController.class
+com\example\domain\Book.class

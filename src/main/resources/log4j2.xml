@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+	<Appenders>
+		<Console name="console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5p %c{1}:%L - %m%n" />
+		</Console>
+		
+		<!-- Rolling File Appender -->
+		<RollingFile name="rollingFile">
+			<FileName>D:/logs/mylog.log</FileName>
+			<FilePattern>D:/logs/%d{yyyy-MM-dd}.log.zip</FilePattern>
+			<PatternLayout pattern="%d{yyyy-MM-dd} [%t] %-5p %c{1}:%L - %m%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1440" modulate="true" />
+			</Policies>
+			<DefaultRolloverStrategy max="5" />
+		</RollingFile>
+	</Appenders>
+
+	<Loggers>
+		<!-- <Logger name="com.example" level="debug">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="rollingFile" />
+		</Logger> -->
+
+		<Root level="info">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="rollingFile" />
+		</Root> 
+	</Loggers>
+</Configuration>
